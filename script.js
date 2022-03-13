@@ -56,38 +56,29 @@ for (var y = 0; y < rows; y++) {
     for(var y = 0; y < matrix.length; y++) {
         for(var x = 0; x < matrix[y].length; x++) {
             if(matrix[y][x] == 1) {
-                grassArr.push(new Grass(x, y, 1));
+                grassArr.push(new Grass(x, y));
             }
             else if(matrix[y][x] == 2) {
-                eaterArr.push(new GrassEater(x, y, 2));
+                eaterArr.push(new GrassEater(x, y));
             }
             else if(matrix[y][x] == 3) {
-                predatorArr.push(new Predator(x, y, 3));
+                predatorArr.push(new Predator(x, y));
             }
             else if(matrix[y][x] == 4) {
-                fireArr.push(new Fire(x, y, 4));
+                fireArr.push(new Fire(x, y));
                 //how to make a new array for each Fire, so that the next Fire-s will be that arrays' i items; that'll allow to splice the first items of Fires when the length reaches a certain amount
             }
             else if(matrix[y][x] == 5) {
-                burntArr.push(new Burnt(x, y, 5));
+                burntArr.push(new Burnt(x, y));
             }
             else if(matrix[y][x] == 6) {
-                iceArr.push(new Ice(x, y, 6));
+                iceArr.push(new Ice(x, y));
             }
             else if(matrix[y][x] == 7) {
-                waterArr.push(new Water(x, y, 7));
+                waterArr.push(new Water(x, y));
             }
         }
     }
-
-//    console.log(eaterArr);
-//    console.log(grassArr);
-//    console.log(predatorArr);
-    // console.log(eaterArr);
-    // console.log(burntArr);
-    // console.log(iceArr);
-    // console.log(waterArr);
-
 }
 
 
@@ -159,6 +150,4 @@ function draw() {
             }
         }
     }
-
-
 }
