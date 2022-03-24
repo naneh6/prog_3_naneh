@@ -1,5 +1,3 @@
-import LivingCreature from './creature.js'
-
 class Predator extends LivingCreature {
     constructor(x, y) {
         super(x, y);

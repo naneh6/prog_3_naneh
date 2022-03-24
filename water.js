@@ -1,39 +1,27 @@
-class Water {
+class Water extends LivingCreature {
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
+        super(x,y);
         this.energy = 15;
     }
-    // getNewCoordinates(){
-    //     this.directions = [
-    //         [this.x-1, this.y-1],
-    //         [this.x, this.y - 1],
-    //         [this.x+1, this.y-1],
-    //         [this.x - 1, this.y],
-    //         [this.x + 1, this.y],
-    //         [this.x-1, this.y+1],
-    //         [this.x, this.y + 1],
-    //         [this.x+1, this.y+1]
-    //     ];
-    // }
 
-    // chooseCell(character) {
+    getNewCoordinates(){
+        this.directions = [
+            [this.x-1, this.y-1],
+            [this.x, this.y - 1],
+            [this.x+1, this.y-1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x-1, this.y+1],
+            [this.x, this.y + 1],
+            [this.x+1, this.y+1]
+        ];
+    }
 
-    //     this.getNewCoordinates();
+    chooseCell(character) {
 
-    //     var found = [];
-    //     for (var i in this.directions) {
-    //         var x = this.directions[i][0];
-    //         var y = this.directions[i][1];
-    //         if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-    //             if (matrix[y][x] == character) {
-    //                 found.push(this.directions[i]);
-    //             }
-
-    //         }
-    //     }
-    //     return found;
-    // }
+        this.getNewCoordinates();
+        return super.chooseCell(character);
+    }
 
     // stopFire() {
     //     var fire = random(this.chooseCell(4));
@@ -51,6 +39,7 @@ class Water {
     //         this.energy--;
     //     }
     // }
+    
     freeze() {
         this.energy--;
         if (this.energy == 0) {
