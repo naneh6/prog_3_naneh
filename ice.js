@@ -1,89 +1,15 @@
-class Ice extends LivingCreature {
-    constructor(x, y) {
-        super(x, y);
+let LivingCreature = require('./creature');
+
+module.exports = class Ice extends LivingCreature {
+    constructor(x, y, index) {
+        super(x, y, index);
         this.energy = 10;
-        // this.innerTop = [];
-        // this.innerBottom = [];
-        // this.innerLeft = [];
-        // this.innerRight = [];
-        // this.outerTop = [];
-        // this.outerBottom = [];
-        // this.outerLeft = [];
-        // this.outerRight = [];
-    }
-
-    // getNewCoordinates() {
-    //     this.innerTop = [
-    //         [this.x-1, this.y-1],
-    //         [this.x, this.y - 1],
-    //         [this.x+1, this.y-1]
-    //     ];
-    //     this.innerBottom = [
-    //         [this.x-1, this.y+1],
-    //         [this.x, this.y + 1],
-    //         [this.x+1, this.y+1]
-    //     ];
-    //     this.innerLeft = [
-    //         [this.x-1, this.y-1],
-    //         [this.x - 1, this.y],
-    //         [this.x-1, this.y+1]
-    //     ];
-    //     this.innerRight = [
-    //         [this.x+1, this.y-1],
-    //         [this.x + 1, this.y],
-    //         [this.x+1, this.y+1]
-    //     ];
-    //     this.outerTop = [
-    //         [this.x-2, this.y-2],
-    //         [this.x-1, this.y-2],
-    //         [this.x, this.y - 2],
-    //         [this.x+1, this.y-2],
-    //         [this.x+2, this.y-2]
-    //     ];
-    //     this.outerBottom = [
-    //         [this.x-2, this.y+2],
-    //         [this.x-1, this.y+2],
-    //         [this.x, this.y + 2],
-    //         [this.x+1, this.y+2],
-    //         [this.x+2, this.y+2]
-    //     ];
-    //     this.outerLeft = [
-    //         [this.x-2, this.y-2],
-    //         [this.x-2, this.y-1],
-    //         [this.x - 2, this.y],
-    //         [this.x-2, this.y+1],
-    //         [this.x-2, this.y+2]
-    //     ];
-    //     this.outerRight = [
-    //         [this.x+2, this.y-2],
-    //         [this.x+2, this.y-1],
-    //         [this.x + 2, this.y],
-    //         [this.x+2, this.y+1],
-    //         [this.x+2, this.y+2]
-    //     ];
-    // }
-
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
-
-    chooseCell(character) {
-        this.getNewCoordinates();
-        return super.chooseCell(character);
     }
 
     melt() {
         this.energy--;
-        var nearbyFire = random(this.chooseCell(4));
+        var avlFire = this.chooseCell(4);
+        var nearbyFire = avlFire[Math.floor(Math.random() * avlFire.length)];
         if (nearbyFire) {
             if (this.energy == 0 || fireArr == []) {
                 for (var i in iceArr) {

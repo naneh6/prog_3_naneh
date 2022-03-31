@@ -1,7 +1,8 @@
-class Fire {
-    constructor(x, y) {
+module.exports = class Fire {
+    constructor(x, y, index) {
         this.x = x;
         this.y = y;
+        this.index = index;
         this.energy = 12;
         this.count = 0;
         this.innerDirections = [];

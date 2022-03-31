@@ -1,5 +1,3 @@
-import { rejects } from "assert";
-
 var socket = io();
 
 side = 30;
@@ -10,7 +8,6 @@ function setup() {
 }
 
 function drawMatrix(matrix) {
-    console.log(matrix);
 
     for(var y = 0; y < matrix.length; y++) {
         for(var x = 0; x < matrix[y].length; x++) {
@@ -44,8 +41,12 @@ function drawMatrix(matrix) {
     }
 }
 
+
+
 setInterval(
     function() {
         socket.on('update', drawMatrix)
     }, 1000
 )
+
+

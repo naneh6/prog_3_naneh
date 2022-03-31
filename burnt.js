@@ -1,7 +1,8 @@
-class Burnt {
-    constructor(x, y) {
+module.exports = class Burnt {
+    constructor(x, y, index) {
         this.x = x;
         this.y = y;
+        this.index = index;
         this.energy = 0;
     }
 
