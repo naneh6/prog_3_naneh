@@ -11,7 +11,7 @@ module.exports = class Ice extends LivingCreature {
         var avlFire = this.chooseCell(4);
         var nearbyFire = avlFire[Math.floor(Math.random() * avlFire.length)];
         if (nearbyFire) {
-            if (this.energy == 0 || fireArr == []) {
+            if (this.energy == 0 || fireArr.length == 0) {
                 for (var i in iceArr) {
                     if (this.x == iceArr[i].x && this.y == iceArr[i].y) {
                         matrix[this.y][this.x] = 7;
@@ -23,16 +23,16 @@ module.exports = class Ice extends LivingCreature {
         }
     }
 
-    disappear() {
-        if (grassArr == [] && eaterArr == [] && predatorArr == []) {
-            if (this.energy == 0) {
-                for (var i in iceArr) {
-                    if (this.x == iceArr[i].x && this.y == iceArr[i].y) {
-                        matrix[this.y][this.x] = 0;
-                        iceArr.splice(i, 1);
-                    }
-                }
-            }
-        }
-    }
+    // disappear() {
+    //     if (grassArr.length == 0 && eaterArr.length == 0 && predatorArr.length == 0) {
+    //         if (this.energy == 0) {
+    //             for (var i in iceArr) {
+    //                 if (this.x == iceArr[i].x && this.y == iceArr[i].y) {
+    //                     matrix[this.y][this.x] = 0;
+    //                     iceArr.splice(i, 1);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }

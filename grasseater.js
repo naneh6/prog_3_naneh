@@ -10,7 +10,6 @@ module.exports = class GrassEater extends LivingCreature {
         var avlCells = this.chooseCell(0);
         var newCell = avlCells[Math.floor(Math.random() * avlCells.length)];
         if (newCell) {
-            console.log('okokokok')
             matrix[this.y][this.x] = 0;
             matrix[newCell[1]][newCell[0]] = 2;
             this.x = newCell[0];

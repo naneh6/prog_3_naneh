@@ -5,32 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-   
-
-    <!-- <style>
-        #legend {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 800px;
-        }
-
-        .legend-color {
-            width: 30px;
-            height: 30px;
-        }
-
-        td {
-            border: 1px solid black;
-            font-size: 14px;
-            padding-left: 5px;
-        }
-    </style> -->
 </head>
 
 <body>
-     <script src="socket.io/socket.io.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="script.js"></script>
     <!-- <table id="legend">
@@ -108,6 +86,33 @@
                 <td>Վերածվում է Սառույցի, երբ էներգիան փոքր է 0-ից</td>
             </tr>
         </table> -->
+
+    <div class="tools">
+        <h1 style="color:rgb(79, 34, 238)">Seasons and Events</h1>
+        <ul>
+            <li>
+                <button onclick="spring()">Spring</button>
+            </li>
+            <li>
+                <button onclick="summer()">Summer</button>
+            </li>
+            <li>
+                <button onclick="autumn()">Autumn</button>
+            </li>
+            <li>
+                <button onclick="winter()">Winter</button>
+            </li>
+            <li>
+                <button onclick="spliceIce()">Splice the Ice</button>
+            </li>
+            <li>
+                <button onclick="last()">"The Last Judgement"</button>
+            </li>
+            <li>
+                <button onclick="renaissance()">"Renaissance"</button>
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>
